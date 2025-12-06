@@ -16,7 +16,7 @@ from playwright.async_api import expect, Page, Response
 
 from settings import SCREENSHOTS_DIR, settings
 
-URL_CLAIM = "https://store.epicgames.com/en-US/free-games"
+URL_CLAIM = "https://store.epicgames.com/zh-CN/free-games"
 
 
 class EpicAuthorization:
@@ -74,7 +74,7 @@ class EpicAuthorization:
         logger.debug("Login with Email")
 
         try:
-            point_url = "https://www.epicgames.com/account/personal?lang=en-US&productName=egs&sessionInvalidated=true"
+            point_url = "https://www.epicgames.com/account/personal?lang=zh-CN&productName=egs&sessionInvalidated=true"
             await self.page.goto(point_url, wait_until="domcontentloaded")
 
             # 1. 使用电子邮件地址登录

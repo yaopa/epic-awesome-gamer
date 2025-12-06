@@ -41,13 +41,13 @@ async def add_games_to_cart(page: Page, urls: List[str] | None = None):
     agent = EpicAgent(page)
 
     urls = urls or [
-        "https://store.epicgames.com/en-US/p/bloompunk-2fd3fd",
-        "https://store.epicgames.com/en-US/p/fall-guys",
-        "https://store.epicgames.com/en-US/p/lords-of-the-fallen-2-lords-of-the-fallen-free-coop-mode-81b41f",
-        "https://store.epicgames.com/en-US/p/once-upon-a-puppet-08ad66",
+        "https://store.epicgames.com/zh-CN/p/bloompunk-2fd3fd",
+        "https://store.epicgames.com/zh-CN/p/fall-guys",
+        "https://store.epicgames.com/zh-CN/p/lords-of-the-fallen-2-lords-of-the-fallen-free-coop-mode-81b41f",
+        "https://store.epicgames.com/zh-CN/p/once-upon-a-puppet-08ad66",
     ]
     await agent.epic_games.add_promotion_to_cart(page, urls=urls)
-    await page.goto("https://store.epicgames.com/en-US/cart", wait_until="networkidle")
+    await page.goto("https://store.epicgames.com/zh-CN/cart", wait_until="networkidle")
     await page.wait_for_timeout(5000)
 
 
